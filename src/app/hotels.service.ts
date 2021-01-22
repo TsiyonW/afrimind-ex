@@ -12,12 +12,12 @@ import { stringify } from '@angular/compiler/src/util';
 export class HotelsService {
   hotelUrlWithId: any;
   roomUrlWithId: any;
-  private hotelsUrl = 'http://traddis.com/api/hotels';
-  private hotelUrl = 'http://traddis.com/api/rooms?hotel_id=';
-  private roomsUrl = 'http://traddis.com/api/hotels/';
-  // private hotelsUrl = '../assets/hotels.data.json';
-  // private hotelUrl = '../assets/hotel.data.json';
-  // private roomsUrl = '../assets/room.data.json';
+  // private hotelsUrl = 'http://traddis.com/api/hotels';
+  // private hotelUrl = 'http://traddis.com/api/rooms?hotel_id=';
+  // private roomsUrl = 'http://traddis.com/api/hotels/';
+  private hotelsUrl = '../assets/hotels.data.json';
+  private hotelUrl = '../assets/hotel.data.json';
+  private roomsUrl = '../assets/room.data.json';
 
   constructor(private http: HttpClient) {}
 
@@ -29,12 +29,16 @@ export class HotelsService {
   // Get hotel detail by id from the api
   getHotelById(hotelId: number): Observable<IHotelDetail[]> {
     this.hotelUrlWithId = this.hotelUrl + hotelId;
-    return this.http.get<IHotelDetail[]>(this.hotelUrlWithId);
+    // return this.http.get<IHotelDetail[]>(this.hotelUrlWithId);
+    return this.http.get<IHotelDetail[]>(this.hotelUrl);
+
   }
 
   // Get rooms using hotel id
   getRooms(hotelId: number): Observable<IRoom[]> {
     this.roomUrlWithId = this.roomsUrl + hotelId;
-    return this.http.get<IRoom[]>(this.roomUrlWithId);
+    // return this.http.get<IHotelDetail[]>(this.hotelUrlWithId);
+
+    return this.http.get<IRoom[]>(this.roomsUrl);
   }
 }
