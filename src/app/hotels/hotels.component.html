@@ -1,0 +1,84 @@
+<div class="hotel-container">
+  <ul>
+    <li class="hotel" *ngFor="let hotel of hotelsDetail">
+      <div class="flex-container">
+        <div class="hotel-image">
+          <img src="{{hotel.DefaultPicture}}" alt="{{hotel.HotelName}}" />
+        </div>
+        <div class="hotel-description">
+          <div class="hotel-description-flex-container">
+            <div class="hotel-description-flex-item hotel-desc-name">
+              <p class="hotel-name">{{hotel.HotelName}}</p>
+              <div>
+                <p class="street-address1">
+                  <span class="fa fa-location-arrow"></span>{{hotel.City}},
+                  {{hotel.StreetAddress1}}, {{hotel.StreetAddress2}}
+                </p>
+                <p class="phone-no">
+                  <span class="fa fa-phone"></span>{{hotel.Phone}}
+                </p>
+                <p class="city"></p>
+                <!-- <p class="star-level"> {{hotel.StarLevel}}</p> -->
+                <p class="description">{{hotel.Description}}</p>
+                <button
+                  (click)="onSelect(hotel)"
+                  class="btn btn-primary btn-md"
+                >
+                  Choose Hotel
+                </button>
+              </div>
+            </div>
+            <div class="hotel-description-flex-item hotel-desc-rating">
+              <!-- Rating -->
+              <div *ngIf="hotel.StarLevel === 1; then thenBlock1 "></div>
+              <ng-template #thenBlock1
+                ><span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span
+              ></ng-template>
+
+              <div *ngIf="hotel.StarLevel === 2; then thenBlock2 "></div>
+              <ng-template #thenBlock2
+                ><span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span
+              ></ng-template>
+
+              <div *ngIf="hotel.StarLevel === 3; then thenBlock3 "></div>
+              <ng-template #thenBlock3
+                ><span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span
+              ></ng-template>
+
+              <div *ngIf="hotel.StarLevel === 4; then thenBlock4 "></div>
+              <ng-template #thenBlock4
+                ><span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span
+              ></ng-template>
+
+              <div *ngIf="hotel.StarLevel === 5; then thenBlock5 "></div>
+              <ng-template #thenBlock5
+                ><span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span
+              ></ng-template>
+              <p class="pricing-display">{{hotel.PricingDisplay}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -31,9 +31,12 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -127,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "afrimind-ex"
+  "defaultProject": "afrimind-ex",
+  "cli": {
+    "analytics": "6ab0db7a-bc31-4959-a2e6-320f94998379"
+  }
 }

@@ -1,0 +1,57 @@
+.container{
+  color: #000033;
+}
+.room-detail{
+  border: solid gray 1px;
+  margin: .5%;
+}
+.hotel-info, .payment-option, .popular-amenities, .rooms {
+  background-color: white;
+  margin-bottom: 2%;
+  border-radius: 0 0 10px 10px;
+}
+.hotel-detail-container{
+  margin-top: 3%;
+  // background-color: white;
+  .main-img{
+    width: 100%;
+    height: 300px;
+  }
+}
+.room-detail{
+  img{
+    width: 100%;
+  }
+}
+.row{
+  margin-left : 5%;
+}
+h5{
+  color: darkblue;
+  background-color: #F0F8FF;
+}
+.checked{
+  color: orange;
+}
+.popular-amenities{
+  .fa{
+    color: darkblue;
+    padding: 5px;
+  }
+}
+.flex-container{
+  display: flex;
+}
+.flex-item:first-child {
+    margin-right: auto;
+  }
+
+.hotel-description{
+  font-style: italic;
+}
+.price-tag{
+  color: white;
+  background-color: darkblue;
+  border-radius: 20px;
+  padding: 5px;
+}

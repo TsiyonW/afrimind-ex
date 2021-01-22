@@ -1,0 +1,27 @@
+.app-header {
+  background-color: white;
+  display: flex;
+  height: 60px;
+}
+.app-header-link {
+  margin-right: 2%;
+  padding: 1%;
+}
+// .app-header-logo{
+//   ...
+// }
+
+.flex-item:first-child {
+  margin-right: auto;
+}
+nav a.active {
+  border-bottom: gray 2px solid;
+  font-weight: bold;
+}
+.app-router-link {
+  padding: 10px;
+}
+h1 {
+  font-style: italic;
+  color:darkblue;
+}

@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="hotel-detail-container">
+    <img
+      src="{{hotelDetail.DefaultPicture}}"
+      class="main-img"
+      alt="{{hotelDetail.HotelName}}"
+    />
+
+    <div class="hotel-info">
+      <div class="flex-container">
+        <div><h1>{{hotelDetail.HotelName}}</h1></div>
+        <div>
+          <h2>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="flex-container">
+        <div class="flex-item">
+          <p>{{hotelDetail.Description}}</p>
+          <p>
+            <span class="fa fa-location-arrow"></span
+            >{{hotelDetail.StreetAddress1}}, {{hotelDetail.StreetAddress2}}
+          </p>
+
+          <p><span class="fa fa-map-pin"></span>{{hotelDetail.City}}</p>
+          <!-- <p>{{hotelDetail.StarLevel}}</p> -->
+          <p>
+            <span class="fa fa-money"></span>Price:
+            <span class="price-tag">{{hotelDetail.PricingDisplay}}</span>
+          </p>
+        </div>
+        <div class="flex-item">
+          <img src="../../assets/map-img.PNG" />
+        </div>
+        <br />
+      </div>
+    </div>
+    <div class="payment-option">
+      <h5>Payment Options <span class="fa fa-credit-card"></span></h5>
+      <div class="row">
+        <div
+          class="col-sm-3"
+          *ngFor="let paymentMethod of hotelDetail.PaymentMethods"
+        >
+          <h6>{{paymentMethod.Name}}</h6>
+          <div class="hotel-description">{{paymentMethod.Description}}</div>
+          <!-- <div>{{paymentMethod.Name}}</div>
+    <div>{{paymentMethod.IsActive}}</div>
+    <div>{{paymentMethod.StatusCode}}</div>
+    <div>{{paymentMethod.StatusReason}}</div> -->
+        </div>
+      </div>
+      <br /><br />
+    </div>
+    <div class="popular-amenities">
+      <h5>Popular amenities</h5>
+      <div class="row">
+        <div class="col-sm-3">
+          <p><span class="fa fa-wifi"> </span>Free WiFi</p>
+        </div>
+        <div class="col-sm-3">
+          <p><span class="fa fa-coffee"></span>Breakfast included</p>
+        </div>
+        <div class="col-sm-3">
+          <p><span class="fa fa-car"></span>Parking</p>
+        </div>
+        <div class="col-sm-3">
+          <p><span class="fa fa-snowflake-o"></span>Air Conditioning</p>
+        </div>
+        <div class="col-sm-3">
+          <p><span class="fa fa-wheelchair"></span>Accessibility</p>
+        </div>
+        <div class="col-sm-3">
+          <p><span class="fa fa-cutlery"></span>Food and drink</p>
+        </div>
+      </div>
+    </div>
+    <div class="rooms">
+      <h5>Rooms</h5>
+      <div class="row">
+        <div class="col-sm-4 room-detail" *ngFor="let room of roomDetail">
+          <img src="{{room.DefaultPicture}}" alt="{{roomDetail.Name}}" />
+          <!-- <div>{{room.RoomTypeId}}</div> -->
+          <div>{{room.Name}}</div>
+          <div>{{room.RoomDescription}}</div>
+          <div><span class="fa fa-bed"></span> {{room.Beds}} beds</div>
+          <div>
+            <span class="fa fa-users"></span> {{room.MaxAdult}} maximum adults
+          </div>
+          <div>Room count: {{room.RoomCount}}</div>
+          <div>
+            <p><span class="fa fa-money"></span>{{room.Price}} Birr</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
