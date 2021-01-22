@@ -15,8 +15,7 @@ export class HotelsComponent implements OnInit {
     this.hotelService
       .getHotels()
       .subscribe((data) => (this.hotelsDetail = data));
-    console.log('hotels detail', this.hotelsDetail);
-  }
+     }
   onSelect(hotel: any): void {
     // navigate to hotel with the hotel id
     this.router.navigate(['/hotel', hotel.HotelId], {
