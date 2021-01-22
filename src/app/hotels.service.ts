@@ -29,14 +29,16 @@ export class HotelsService {
   // Get hotel detail by id from the api
   getHotelById(hotelId: number): Observable<IHotelDetail[]> {
     this.hotelUrlWithId = this.hotelUrl + hotelId;
-    return this.http.get<IHotelDetail[]>(this.hotelUrlWithId);
+    // return this.http.get<IHotelDetail[]>(this.hotelUrlWithId);
+    return this.http.get<IHotelDetail[]>(this.hotelUrl);
 
   }
 
   // Get rooms using hotel id
   getRooms(hotelId: number): Observable<IRoom[]> {
     this.roomUrlWithId = this.roomsUrl + hotelId;
-    return this.http.get<IRoom[]>(this.hotelUrlWithId);
+    // return this.http.get<IRoom[]>(this.roomUrlWithId);
+    return this.http.get<IRoom[]>(this.roomsUrl);
 
   }
 }
